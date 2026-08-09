@@ -2,44 +2,45 @@
 
 ### Connect. Chat. Instantly.
 
-A modern real-time chat application built with React, Node.js, Express, Socket.io and SQLite.
+PulseChat is a realtime group chat app built with React, Vite, Node.js, Express, Socket.io, and SQLite.
 
-## Demo
+## Live Demo
 - Frontend: https://frontend-l808y80tg-iam-abhays-projects.vercel.app
 - Backend health: https://pulsechat-backend-production-23f3.up.railway.app/api/health
 
 ## Tech Stack
 - Frontend: React, Vite, Socket.io client
-- Backend: Node.js, Express, Socket.io server, SQLite (`better-sqlite3`)
-- Styling: Plain CSS
-- Runtime: Node 18+
+- Backend: Node.js, Express, Socket.io server
+- Database: SQLite via `better-sqlite3`
+- Styling: CSS
+- Runtime: Node.js 18+
 
-## Features
-- Username-based login
-- Real-time messaging with Socket.io
-- Persistent message history stored in SQLite
+## Key Features
+- Username-based chat entry
+- Realtime messaging with Socket.io
+- Persistent chat history stored in SQLite
 - Active user presence list
 - Typing indicator
 - Backend health endpoint: `/api/health`
 
 ## Project Structure
-- `backend/` — Express + Socket.io server, SQLite persistence, API routes
-- `frontend/` — React client, message composer, and chat UI
-- `frontend/.env.example` — frontend environment example
-- `backend/.env.example` — backend environment example
+- `backend/` — Express + Socket.io server, API routes, database persistence
+- `frontend/` — React chat UI, Socket.io client, Vite build config
+- `backend/.env.example` — backend environment sample
+- `frontend/.env.example` — frontend environment sample
 
-## Local Setup
+## Local Development
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/iam-abhay/pulsechat-realtime-chat.git
 cd pulsechat-realtime-chat
 ```
 
-### 2. Backend setup
+### 2. Start the backend
 ```bash
 cd backend
 npm install
-cp .env.example .env
+copy .env.example .env
 ```
 Update `backend/.env` if necessary:
 ```env
@@ -52,68 +53,62 @@ Start the backend:
 npm run dev
 ```
 
-### 3. Frontend setup
+### 3. Start the frontend
 ```bash
 cd ../frontend
 npm install
-cp .env.example .env
+copy .env.example .env
 npm run dev
 ```
 Open `http://localhost:5173`
 
-## Deployment Recommendation
-### Backend
+## Deployment
+### Frontend
+The frontend is deployed on Vercel.
+
 Recommended hosts:
-- Render: Node web service
-- Railway: Node app
-- Fly.io: Node app
+- Vercel
+- Netlify
+
+Vite build command:
+```bash
+npm run build
+```
+Publish the generated `dist/` folder.
+
+### Backend
+The backend is deployed on Railway with a WebSocket-friendly runtime.
+
+Recommended hosts:
+- Railway
+- Render
+- Fly.io
 
 Backend environment variables:
 - `PORT`
 - `CLIENT_URL`
 - `DB_FILE`
 
-### Frontend
-Recommended hosts:
-- Vercel
-- Netlify
+### Vercel + Socket.io Note
+The backend uses Socket.io for realtime WebSocket messaging. Vercel serverless functions do not support long-lived Socket.io connections, so the backend must be hosted on a WebSocket-capable platform such as Railway, Render, or Fly.io.
 
-Frontend build command:
-- `npm run build`
-Publish `dist/` from Vite.
+## Production URLs
+- Frontend: https://frontend-l808y80tg-iam-abhays-projects.vercel.app
+- Backend: https://pulsechat-backend-production-23f3.up.railway.app
+- Health: https://pulsechat-backend-production-23f3.up.railway.app/api/health
 
-### Vercel Frontend Deployment
-A `frontend/vercel.json` file is included for deploying the frontend from the `frontend/` folder.
-
-1. Import the repository into Vercel.
-2. Select the `frontend` folder as the project root for the frontend deployment.
-3. Use the default build command:
-   ```bash
-   npm install && npm run build
-   ```
-4. Set the environment variables in Vercel:
-   - `VITE_API_URL` → backend URL
-   - `VITE_SOCKET_URL` → backend URL
-
-Because the app is structured as a monorepo, Vercel will build the React app from `frontend/package.json` and publish the generated `dist/` folder.
-
-### Backend Deployment Note
-The backend uses Socket.io for live WebSocket messaging. Vercel serverless functions do not support long-lived Socket.io connections, so the backend should be deployed to a WebSocket-friendly host such as Render, Railway, or Fly.io.
-
-If you want to keep both apps on one platform, use Vercel for the frontend and Render/Railway for the backend.
-
-## Screen Recording Checklist
-Capture a 1–2 minute video that includes:
+## Video Demo Checklist
+Capture a short walkthrough showing:
 1. Opening the deployed frontend URL
-2. Entering a username and joining chat
+2. Entering a username and joining the chat
 3. Sending a message and seeing it appear instantly
-4. Showing another connected user or the presence list
-5. Verifying the backend health endpoint if available
+4. Showing the connected users list or typing indicator
+5. Verifying the backend health endpoint
 
 ## Notes
-- The backend creates `./data/chat.db` on first run.
-- The app uses a single shared chat room.
-- Usernames persist in browser `localStorage`.
+- The backend creates `./data/chat.db` automatically on first run.
+- The app uses a shared global chat room.
+- Usernames are persisted in browser `localStorage`.
 
-## Contact
-If you'd like, I can help add deployment configuration for Render/Vercel or create a lightweight CI/deploy guide.
+## Need help?
+I can also add deployment config or a lightweight CI/CD guide if needed.
