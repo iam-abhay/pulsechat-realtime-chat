@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const clientUrlEnv = process.env.CLIENT_URL || "http://localhost:5173,https://frontend-vert-phi-55.vercel.app";
+const clientUrlEnv = process.env.CLIENT_URL || "http://localhost:5173,https://frontend-iam-abhays-projects.vercel.app";
 const clientUrl = clientUrlEnv.includes(",") 
   ? clientUrlEnv.split(",").map(url => url.trim()) 
   : clientUrlEnv;
