@@ -5,7 +5,7 @@
 PulseChat is a realtime group chat application with a React/Vite frontend and a Node/Express/Socket.io backend. Messages are persisted in SQLite so chat history survives restarts.
 
 ## Live Demo
-- Frontend: https://frontend-l808y80tg-iam-abhays-projects.vercel.app
+- Frontend: https://frontend-vert-phi-55.vercel.app
 - Backend health: https://pulsechat-backend-production-23f3.up.railway.app/api/health
 
 ## Overview
@@ -123,7 +123,7 @@ Required backend environment variables:
 Socket.io needs a WebSocket-friendly host. Vercel serverless functions do not support long-lived WebSocket connections, so the backend should be deployed to Railway, Fly.io, or a similar service.
 
 ## Production URLs
-- Frontend: https://frontend-vert-phi-55
+- Frontend: https://frontend-vert-phi-55.vercel.app
 - Backend: https://pulsechat-backend-production-23f3.up.railway.app
 - Health: https://pulsechat-backend-production-23f3.up.railway.app/api/health
 
