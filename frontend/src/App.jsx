@@ -11,7 +11,8 @@ import {
 } from "lucide-react";
 import { fetchMessages } from "./api";
 
-const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || "http://localhost:5000";
+const DEFAULT_SOCKET_URL = "https://pulsechat-backend-production-23f3.up.railway.app";
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || (window.location.hostname === "localhost" ? "http://localhost:5000" : DEFAULT_SOCKET_URL);
 
 function formatTime(dateString) {
   return new Intl.DateTimeFormat([], {
