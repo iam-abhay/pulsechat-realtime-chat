@@ -112,7 +112,6 @@ The backend is deployed on Railway with support for long-lived WebSocket connect
 
 Recommended hosting options:
 - Railway
-- Render
 - Fly.io
 
 Required backend environment variables:
@@ -121,7 +120,7 @@ Required backend environment variables:
 - `DB_FILE`
 
 ### Socket.io deployment note
-Socket.io needs a WebSocket-friendly host. Vercel serverless functions do not support long-lived WebSocket connections, so the backend should be deployed to Railway, Render, Fly.io, or a similar service.
+Socket.io needs a WebSocket-friendly host. Vercel serverless functions do not support long-lived WebSocket connections, so the backend should be deployed to Railway, Fly.io, or a similar service.
 
 ## Production URLs
 - Frontend: https://frontend-l808y80tg-iam-abhays-projects.vercel.app
