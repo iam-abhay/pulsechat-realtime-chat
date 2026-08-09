@@ -9,7 +9,7 @@ PulseChat is a realtime group chat application with a React/Vite frontend and a 
 - Backend health: https://pulsechat-backend-production-23f3.up.railway.app/api/health
 
 ## Demo Video
-[▶ Click here to watch the Demo Video](./Pulsechat%20Working.mp4)
+[▶ Click here to watch the Demo Video](./Pulsechat-Working.mp4)
 
 ## Overview
 PulseChat lets users enter a username, join a shared chat room, and send realtime messages. The frontend connects to a Socket.io backend for live updates and also uses a REST API to fetch chat history.
