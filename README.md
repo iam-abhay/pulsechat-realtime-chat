@@ -4,14 +4,9 @@
 
 A modern real-time chat application built with React, Node.js, Express, Socket.io and SQLite.
 
-## ✅ Submission Targets
-- GitHub repository with full source
-- Deployed frontend and backend
-- README with setup, features, and deployment notes
-
 ## Demo
-- Frontend: _Add live frontend URL here_
-- Backend health: _Add backend health URL here_
+- Frontend: https://frontend-l808y80tg-iam-abhays-projects.vercel.app
+- Backend health: https://pulsechat-backend-production-23f3.up.railway.app/api/health
 
 ## Tech Stack
 - Frontend: React, Vite, Socket.io client
