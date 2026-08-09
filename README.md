@@ -1,11 +1,12 @@
-# PulseChat — Real-Time Chat Application
+# PulseChat 💬
 
-PulseChat is a responsive chat app built with a React frontend, Node.js + Express backend, Socket.io for live messaging, and SQLite for message persistence.
+### Connect. Chat. Instantly.
+
+A modern real-time chat application built with React, Node.js, Express, Socket.io and SQLite.
 
 ## ✅ Submission Targets
 - GitHub repository with full source
 - Deployed frontend and backend
-- 1–2 minute screen recording demoing the live app
 - README with setup, features, and deployment notes
 
 ## Demo
@@ -35,8 +36,8 @@ PulseChat is a responsive chat app built with a React frontend, Node.js + Expres
 ## Local Setup
 ### 1. Clone the repository
 ```bash
-git clone <repo-url>
-cd realtime-chat-app
+git clone https://github.com/iam-abhay/pulsechat-realtime-chat.git
+cd pulsechat-realtime-chat
 ```
 
 ### 2. Backend setup
